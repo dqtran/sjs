@@ -2,7 +2,7 @@ Running in Local Server
 
 1) "bundle install" to install the required ruby gems
 
-2) "rake db:setup" & "rake db:seed" to populate the environment variables
+2) "rake db:setup" & "rake db:migrate" & "rake db:seed" to populate the environment variables
 
 3) "rails s" to run the application
 
