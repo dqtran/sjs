@@ -1,0 +1,30 @@
+<%= form_for(@project) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description, placeholder: "Description" %>
+
+    <%= f.label :category %>
+    <%= f.select :category, ['Technology', 'CleanTech', 'Art', 'Web'], :selected =>'Technology' %>
+
+    <%= f.label :current_members %>
+    <%= f.text_field :current_members %>
+
+    <%= f.label :looking_for %>
+    <%= f.text_area :looking_for %>
+
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+
+    <%= f.label :video_url %>
+    <%= f.url_field :video_url %>
+
+    <%= f.label :project_url %>
+    <%= f.url_field :project_url %>
+  </div>
+
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

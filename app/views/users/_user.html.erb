@@ -1,0 +1,9 @@
+<li>
+  <%= image_tag 'http://www.mynatour.org/sites/default/files/imagecache/mynatour_user_profile_small/images/blank_user_pic_insert.gif' %>
+  <%= link_to user.name, user %>
+  <% if signed_in? %>
+    <% if current_user.admin? && !current_user?(user) %>
+      | <%= link_to "delete", user, method: :delete, confirm: "You sure?" %>
+    <% end %>
+  <% end %>
+</li>

@@ -1,0 +1,15 @@
+common: &common
+  adapter: postgresql
+
+development:
+  <<: *common
+  database: sjs_development
+  host: localhost
+
+test:
+  <<: *common
+  database: sjs_test
+
+production:
+  <<: *common
+  database: sjs_production

@@ -1,0 +1,14 @@
+<h1>
+  <%= current_user.name %>
+  <a href="<%= user_path(current_user) %>">
+    <%= image_tag 'http://www.mynatour.org/sites/default/files/imagecache/mynatour_user_profile_small/images/blank_user_pic_insert.gif' %>
+  </a>
+</h1>
+
+<span>
+  <%= link_to "view my profile", current_user %>
+</span>
+
+<span>
+  <%= pluralize(current_user.projects.count, "project") %>
+</span>

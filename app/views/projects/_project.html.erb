@@ -1,0 +1,21 @@
+<li>
+  <span class="content">
+    <% if current_user?(project.user) %>
+      <b>Title</b>: <%= project.title %>
+      <br>
+      <b>Description</b>: <%= project.description %>
+      <br>
+      <b>Category</b>: <%= project.category %>
+      <br>
+
+      By <%= link_to current_user.name, current_user %>
+      <br>
+      <%= link_to "  Delete", project, method: :delete,
+                                      confirm: "You sure?",
+                                      title: project.description %>
+    <% else %>
+      <%= project.description %>
+    <% end %>
+    
+  </span>
+</li>

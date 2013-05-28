@@ -1,0 +1,22 @@
+<% provide(:title, 'Recent Projects') %>
+<div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+    </aside>
+
+    <aside class="span8">
+      <section>
+        <%= render @project %>
+      </section>
+      <section>
+        <% if @current_user.comments.any? %>
+          <h4>Comments</h4>
+          <ol>
+            <%= render @comments %>
+          </ol>
+        <% end %>
+      <section>
+    </aside>
+</div>

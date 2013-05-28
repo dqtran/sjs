@@ -1,0 +1,22 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= image_tag 'http://www.mynatour.org/sites/default/files/imagecache/mynatour_user_profile_small/images/blank_user_pic_insert.gif' %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="span8">
+    <% if @user.projects.any? %>
+      <h3><%= @user.projects.count %> ideas from <%= @user.name %></h3>
+      <ol class="microposts">
+        <%= render @projects %>
+      </ol>
+      <%= will_paginate @projects %>
+    <% else %>
+      <h3>This user doesn't have any projects yet. Get them to add one!</h3>
+    <% end %>
+  </div>
+</div>

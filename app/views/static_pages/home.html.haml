@@ -1,0 +1,21 @@
+.center.hero-unit
+  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "500", :src => "http://www.youtube.com/embed/3GxT1rYvVI8", :width => "640"}
+  %h2
+    Connect student entrepreneurs and mentors across campus in
+    %a{:href => "http://www.colorado.edu"} University of Colorado Boulder
+  - if signed_in?
+  - else
+    = link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary"
+
+.user-info-container
+  %h2.user-info-title.mod-seeking SEEKING
+  .user-info-slider.mod-seeking.row
+    = render :partial => "shared/user_info_frontpage", :collection => @seeking, :as => :user
+  %br
+  %h2.user-info-title.mod-seeking JOINING 
+  .user-info-slider.mod-joining.row
+    = render :partial => "shared/user_info_frontpage", :collection => @joining, :as => :user
+  %br
+  %h2.user-info-title.mod-seeking MENTOR
+  .user-info-slider.mod-mentor.row
+    = render :partial => "shared/user_info_frontpage", :collection => @mentor, :as => :user
